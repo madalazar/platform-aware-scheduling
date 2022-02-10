@@ -1,7 +1,7 @@
-FROM golang:1.16-alpine as user_builder
+FROM golang:1.17-alpine as user_builder
 RUN adduser -D -u 10001 tas
 
-FROM golang:1.16-alpine as builder
+FROM golang:1.17-alpine as builder
 ARG DIR=telemetry-aware-scheduling
 ARG SRC_ROOT=/src_root
 COPY . ${SRC_ROOT}
