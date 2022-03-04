@@ -3,7 +3,7 @@ module github.com/intel/platform-aware-scheduling/telemetry-aware-scheduling
 go 1.17
 
 require (
-	github.com/intel/platform-aware-scheduling/extender v0.1.0
+	github.com/intel/platform-aware-scheduling/extender v0.2.0
 	k8s.io/api v0.23.3
 	k8s.io/apimachinery v0.23.3
 	k8s.io/client-go v0.23.3
@@ -53,4 +53,7 @@ require (
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
-replace github.com/intel/platform-aware-scheduling/telemetry-aware-scheduling => ../telemetry-aware-scheduling
+replace (
+	github.com/intel/platform-aware-scheduling/extender => ../extender
+	github.com/intel/platform-aware-scheduling/telemetry-aware-scheduling => ../telemetry-aware-scheduling
+)
