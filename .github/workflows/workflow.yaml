@@ -37,3 +37,4 @@ jobs:
     if: ( !contains(github.repository, '/platform-aware-scheduling') && github.event_name != 'push' )
     with:
       runson: self-hosted-kind
+      isLocal: "true"
