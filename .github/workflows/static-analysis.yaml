@@ -90,11 +90,5 @@ jobs:
         with:
           go-version: ${{ inputs.goVersion  }}
       - name: Running golang CI for ${{matrix.workingdir}}
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: ${{ inputs.goLangCIVersion  }}
-          skip-go-installation: true
-          working-directory: ${{matrix.workingdir }}
-          # Additional linting tools can be added here
-          args: --timeout=5m -v --color='always'
+        run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@${{ inputs.goLangCIVersion }} && cd ./${{ matrix.workingdir }} && golangci-lint run --timeout=5m -v --color='always' && cd ..
 
